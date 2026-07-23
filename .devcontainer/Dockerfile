@@ -16,7 +16,7 @@ RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RE
     ln -s /usr/local/share/chromedriver-linux64/chromedriver /usr/bin/chromedriver
 
 # Install xvfb (for headless operation)
-RUN apt-get install -y xvfb
+RUN apt-get update && apt-get install -y xvfb
 
 # Set display for xvfb
 ENV DISPLAY=:99
