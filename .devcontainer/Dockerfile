@@ -2,7 +2,6 @@
 FROM mcr.microsoft.com/vscode/devcontainers/python:3.9
 
 # Mettre à jour apt et installer les dépendances système en une seule commande ROBUSTE
-# On nettoie le cache après pour garder l'image légère
 RUN apt-get update && apt-get install -y \
     wget \
     curl \
@@ -21,6 +20,6 @@ RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RE
 # Définir la variable d'environnement pour l'écran virtuel
 ENV DISPLAY=:99
 
-# Copier le fichier des dépendances et les installer avec pip
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Installer les dépendances Python DIRECTEMENT avec pip
+# Plus besoin du fichier requirements.txt
+RUN pip install --no-cache-dir selenium requests
