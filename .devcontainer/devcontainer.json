@@ -1,15 +1,12 @@
 {
-  "name": "Parrainage Automation",
+  "name": "Parrainage Automation Propre",
   "dockerFile": "Dockerfile",
   "settings": {
-    "python.defaultInterpreterPath": "/usr/local/bin/python",
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.defaultInterpreterPath": "/usr/local/bin/python"
   },
   "extensions": [
     "ms-python.python"
   ],
   "forwardPorts": [8080],
-  "postCreateCommand": "pip install -r requirements.txt",
   "remoteUser": "vscode"
 }
